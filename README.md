@@ -4,6 +4,9 @@ You can take a ready-made template with good settings, components and the most i
 You will get a blank slate with the ready state of the button. 
 You will get alias, styledComponent, toolkit and clean webpack with modules if needed.
 
+You are provided with a clean jsx without ts, but you can configure it yourself.
+You can choose css.module or styledComponent.
+
 ### Installation
 
 ```sh
