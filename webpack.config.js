@@ -10,6 +10,11 @@ let configWebPack = {
     publicPath: "",
   },
 
+  devServer: {
+    historyApiFallback: true,
+    port: 3000
+  },
+
   module: {
     rules: [
       {
@@ -60,6 +65,7 @@ let configWebPack = {
     extensions: [".js", ".jsx"],
     alias: {
       "@cmp": path.resolve(__dirname, "src/components"),
+      "@pages": path.resolve(__dirname, "src/pages"),
       "@src": path.resolve(__dirname, "src"),
     },
   },

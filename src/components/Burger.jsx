@@ -88,4 +88,4 @@ const Burger = () => {
     </>
   );
 };
-export default Burger;
+export { Burger };

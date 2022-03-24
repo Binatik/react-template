@@ -1,28 +1,22 @@
 import React from "react";
-import styled, { ThemeProvider } from "styled-components";
-import { theme } from "@src/store/theme";
-import Header from "@cmp/Header";
-import Content from "@cmp/Content";
-import Footer from "@cmp/Footer";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { Layout } from "@cmp/Layout";
+import { Main } from "@pages/Main";
+import { Started } from "@pages/Started";
+import { Error404 } from "@pages/Error404";
 import "./style.css";
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  min-height: 100%;
-`;
 
 const App = () => {
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Wrapper>
-          <Header />
-          <Content />
-          <Footer />
-        </Wrapper>
-      </ThemeProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Main />} />
+          <Route path="/started" element={<Started />} />
+          <Route path="/404" element={<Error404 />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/404" />} />
+      </Routes>
     </>
   );
 };
