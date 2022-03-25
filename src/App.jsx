@@ -14,8 +14,8 @@ const App = () => {
           <Route index element={<Main />} />
           <Route path="/started" element={<Started />} />
           <Route path="/404" element={<Error404 />} />
+          <Route path="/*" element={<Navigate to="/404" />} />
         </Route>
-        <Route path="*" element={<Navigate to="/404" />} />
       </Routes>
     </>
   );
