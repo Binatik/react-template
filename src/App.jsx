@@ -12,9 +12,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
-          <Route path="/started" element={<Started />} />
-          <Route path="/404" element={<Error404 />} />
-          <Route path="/*" element={<Navigate to="/404" />} />
+          <Route path="started" element={<Started />} />
+          <Route path="404" element={<Error404 />} />
+          <Route path="*" element={<Navigate to="404" />} />
         </Route>
       </Routes>
     </>
