@@ -1,16 +1,16 @@
 ## React-template
+```"homepage": "https://binatik.github.io/react-template"```
 
-You can take a ready-made template with good settings, components and the most important styles.
-You will get a blank slate with the ready state of the button. 
-You will get alias, styledComponent, toolkit and clean webpack with modules if needed.
+A clean sheet with a ready-made set of basic components and a global state will help you quickly start development and not clog your head with.
 
-You are provided with a clean jsx without ts, but you can configure it yourself.
-You can choose css.module or styledComponent.
+You are provided with a ready-made template with the necessary settings for comfortable work.
+
+In the set module.css, styledComponent, Routers, Redux-Toolkit, Deploy.
 
 ### Installation
 
 ```sh
-npm i
+npm install
 ```
 
 ### Scripts
@@ -22,3 +22,6 @@ npm run build
 
 ### Deploy
 Project deployment is automatic Actions 🚀🚀🚀
+
+### Warning
+We strongly recommend you do not use HashRouter unless you absolutely have to. ```index.js```
