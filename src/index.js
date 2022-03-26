@@ -5,15 +5,15 @@ import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { store } from "./toolkit/index.js";
 import { theme } from "@src/store/theme";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <App />
       </Provider>
     </ThemeProvider>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById("root")
 );
