@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/react-template/" element={<Layout />}>
           <Route index element={<Main />} />
           <Route path="started" element={<Started />} />
           <Route path="404" element={<Error404 />} />
