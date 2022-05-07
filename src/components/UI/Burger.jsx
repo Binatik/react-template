@@ -1,12 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-
+import React, { useContext } from "react";
+import styled, { ThemeContext } from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { toggle } from "@src/toolkit/slice/burger";
-import { getBurgerState } from "@src/toolkit";
 
-//StyledComponents
-import { BurgerLine } from "@src/store/styleComponents";
+import { toggle } from "@src/store/redux/slice/burger";
+import { BurgerLine } from "@src/store/styled/styleComponents";
+
+import { getBurgerState } from "@src/store/redux";
 
 const LineClose = styled(BurgerLine)`
   stroke-width: 0.393rem;
@@ -47,11 +46,39 @@ const IconLine = styled.svg`
   height: 45px;
 `;
 
-const _Burger = styled.div`
+const Burger = () => {
+  const dispatch = useDispatch();
+
+  const { toggle: isAciveBurger } = useSelector(getBurgerState);
+
+  const themeColor = useContext(ThemeContext).colors.surface;
+  const burgerShadow = `0 0 0 100vw ${themeColor}, 0 0 0 100vh ${themeColor}`;
+
+  return (
+    <>
+      <Burger.Burger shadow={burgerShadow} isAciveBurger={isAciveBurger} onClick={() => dispatch(toggle())}>
+        <IconLine version="1.1" viewBox="0 0 100 100">
+          <Line1 isAciveBurger={isAciveBurger} d="M 50,35 H 30" />
+          <Line2 isAciveBurger={isAciveBurger} d="M 50,35 H 70" />
+          <Line3 isAciveBurger={isAciveBurger} d="M 50,50 H 30" />
+          <Line4 isAciveBurger={isAciveBurger} d="M 50,50 H 70" />
+          <Line5 isAciveBurger={isAciveBurger} d="M 50,65 H 30" />
+          <Line6 isAciveBurger={isAciveBurger} d="M 50,65 H 70" />
+        </IconLine>
+        <IconClose isAciveBurger={isAciveBurger} version="1.1" viewBox="0 0 100 100">
+          <LineClose d="M 34,32 L 66,68" />
+          <LineClose d="M 66,32 L 34,68" />
+        </IconClose>
+      </Burger.Burger>
+    </>
+  );
+};
+
+Burger.Burger = styled.div`
   display: none;
 
-  @media ${props => props.theme.breakpoints.tablet} {
-    box-shadow: ${props => (props.isAciveBurger ? "0 0 0 100vw rgb(28, 134, 255), 0 0 0 100vh rgb(28, 134, 255)" : "none")};
+  @media ${props => props.theme.desktopFirst.breakpoints.tablet} {
+    box-shadow: ${props => (props.isAciveBurger ? props.shadow : "none")};
     border-radius: ${props => (props.isAciveBurger ? "50% 50% 50% 50%" : "0")};
 
     position: fixed;
@@ -65,27 +92,4 @@ const _Burger = styled.div`
   }
 `;
 
-const Burger = () => {
-  const { toggle: isAciveBurger } = useSelector(getBurgerState);
-  const dispatch = useDispatch();
-
-  return (
-    <>
-      <_Burger isAciveBurger={isAciveBurger} onClick={() => dispatch(toggle())}>
-        <IconLine version="1.1" viewBox="0 0 100 100">
-          <Line1 isAciveBurger={isAciveBurger} d="M 50,35 H 30" />
-          <Line2 isAciveBurger={isAciveBurger} d="M 50,35 H 70" />
-          <Line3 isAciveBurger={isAciveBurger} d="M 50,50 H 30" />
-          <Line4 isAciveBurger={isAciveBurger} d="M 50,50 H 70" />
-          <Line5 isAciveBurger={isAciveBurger} d="M 50,65 H 30" />
-          <Line6 isAciveBurger={isAciveBurger} d="M 50,65 H 70" />
-        </IconLine>
-        <IconClose isAciveBurger={isAciveBurger} version="1.1" viewBox="0 0 100 100">
-          <LineClose d="M 34,32 L 66,68" />
-          <LineClose d="M 66,32 L 34,68" />
-        </IconClose>
-      </_Burger>
-    </>
-  );
-};
 export { Burger };

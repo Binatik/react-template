@@ -1,7 +1,6 @@
 import React from "react";
 
-//StyledComponents
-import { Container } from "@src/store/styleComponents";
+import { Container } from "@src/store/styled/styleComponents";
 
 const Footer = () => {
   return (

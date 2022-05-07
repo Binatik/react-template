@@ -1,13 +1,13 @@
 import React from "react";
 
 //StyledComponents
-import { Container } from "@src/store/styleComponents";
+import { Container } from "@src/store/styled/styleComponents";
 
 const Started = () => {
   return (
     <>
       <Container>
-        <h2>Remove unnecessary pages and components if development requires it.</h2>
+        <h2>Дополнительная страница.</h2>
       </Container>
     </>
   );

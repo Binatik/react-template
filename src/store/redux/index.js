@@ -7,4 +7,6 @@ export const store = configureStore({
   reducer: {
     burger,
   },
+
+  devTools: process.env.NODE_ENV !== "production",
 });

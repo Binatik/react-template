@@ -1,13 +1,13 @@
 import React from "react";
 
 //StyledComponents
-import { Container } from "@src/store/styleComponents";
+import { Container } from "@src/store/styled/styleComponents";
 
 const Main = () => {
   return (
     <>
       <Container>
-        <h2>You are on the main page of the start template.</h2>
+        <h2>Главная страница - index</h2>
       </Container>
     </>
   );

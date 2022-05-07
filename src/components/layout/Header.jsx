@@ -1,18 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-
 import { NavLink } from "react-router-dom";
-import { Burger } from "@cmp/Burger";
 
-//StyledComponents
-import { Container } from "@src/store/styleComponents";
+import { Container } from "@src/store/styled/styleComponents";
+
+import { Burger } from "@cmp/UI/Burger";
 
 const Link = styled(NavLink)`
+  margin: 15px 0 0 0;
   display: inline-block;
   text-decoration: none;
+  color: ${props => props.theme.colors.secondary};
 
   &.active {
-    color: ${props => props.theme.colors.auxiliary }
+    color: ${props => props.theme.colors.primary};
   }
 `;
 
@@ -21,12 +22,11 @@ const Header = ({ ...props }) => {
     <>
       <header>
         <Container>
-          <h2>Header</h2>
           <Link {...props} to="/">
-            Home
+            Главная
           </Link>
           <Link {...props} to="started">
-            started
+            Дополнительная
           </Link>
           <Burger />
         </Container>

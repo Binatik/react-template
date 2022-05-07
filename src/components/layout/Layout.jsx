@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-
-import { Header } from "@cmp/Header";
-import { Footer } from "@cmp/Footer";
 import { Outlet } from "react-router-dom";
+
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   min-height: 100%;
+  background-color: ${props => props.theme.colors.background};
+  overflow: hidden;
 `;
 
 const Main = styled.main`

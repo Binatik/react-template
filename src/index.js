@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import App from "./App.jsx";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
-import { store } from "./toolkit/index.js";
-import { theme } from "@src/store/theme";
+import { store } from "./store/redux/index.js";
+import { theme } from "@src/store/styled/theme";
 import { HashRouter } from "react-router-dom";
 
 ReactDOM.render(
