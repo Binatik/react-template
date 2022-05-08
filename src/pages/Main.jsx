@@ -1,6 +1,5 @@
 import React from "react";
 
-//StyledComponents
 import { Container } from "@src/store/styled/styleComponents";
 
 const Main = () => {
