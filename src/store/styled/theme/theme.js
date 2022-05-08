@@ -1,3 +1,6 @@
+import { breakpoints } from "./breakpoints";
+import { fontStyle } from "./style";
+
 export const theme = {
   colors: {
     background: "#374d5e",
@@ -8,26 +11,20 @@ export const theme = {
     backgrounds: [], //Если фон разный.
   },
 
-  textSize: {
-    h2: "1.5rem",
-    paragraph: "1rem",
-    span: "0.8rem",
-  },
-
   grid: {
     col3: "33.333%",
     col2: "50%",
     col1: "100%",
   },
 
+  desktopFirst: {
+    tablet: `(max-width: ${breakpoints.medium}px)`,
+    desktop: `(max-width: ${breakpoints.large}px)`,
+  },
+
   mobileFirst: {
     breakpoints: {},
   },
 
-  desktopFirst: {
-    breakpoints: {
-      tablet: "(max-width: 767.97px)",
-      desktop: "(max-width: 991.98px)",
-    },
-  },
+  fontStyle,
 };

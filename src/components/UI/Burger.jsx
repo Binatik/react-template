@@ -77,7 +77,7 @@ const Burger = () => {
 Burger.Burger = styled.div`
   display: none;
 
-  @media ${props => props.theme.desktopFirst.breakpoints.tablet} {
+  @media ${props => props.theme.desktopFirst.tablet} {
     box-shadow: ${props => (props.isAciveBurger ? props.shadow : "none")};
     border-radius: ${props => (props.isAciveBurger ? "50% 50% 50% 50%" : "0")};
 
