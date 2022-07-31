@@ -1,13 +1,14 @@
 import React from "react";
 
-import { Container } from "@src/store/styled/styleComponents";
+import { Container } from "@src/store/styled/components/other";
+import { SecondaryParagraph } from "@src/store/styled/components/texts";
 
 const Footer = () => {
   return (
     <>
       <footer>
         <Container>
-          <h2>Footer</h2>
+          <SecondaryParagraph>Footer</SecondaryParagraph>
         </Container>
       </footer>
     </>

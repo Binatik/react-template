@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const BurgerLine = styled.path`
-  fill:  ${props => props.theme.colors.primary};
+  fill: ${props => props.theme.colors.primary};
   transform-origin: 50%;
   transition: transform 400ms;
   stroke: ${props => props.theme.colors.primary};

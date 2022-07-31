@@ -1,14 +1,16 @@
 import { breakpoints } from "./breakpoints";
-import { fontStyle } from "./style";
+import { fontStyle } from "./fontStyle";
 
 export const theme = {
   colors: {
-    background: "#374d5e",
     primary: "#fff",
     secondary: "#90a4b4",
     surface: "#aa8270",
 
-    backgrounds: [], //Если фон разный.
+    other: {
+      primary: "#374d5e",
+      secondary: "#00e600",
+    },
   },
 
   grid: {
